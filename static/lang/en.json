@@ -1,0 +1,10 @@
+{
+    "FVTTFragmentShaderPrecision": {
+        "Settings": {
+            "Precision": {
+                "name": "Enable High Precision Shaders",
+                "hint": "Forces the use of high precision fragment shaders. This fixes some rendering issues on certain system/browser combinations where medium precision shaders are not upgraded to high precision by the browser."
+            }
+        }
+    }
+}

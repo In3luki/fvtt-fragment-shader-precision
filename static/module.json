@@ -1,0 +1,29 @@
+{
+    "id": "fvtt-fragment-shader-precision",
+    "title": "PF2e Fragment Shader Precision",
+    "description": "A lightweight module that fixes some rendering issues on certain system/browser (e.g. CachyOS/Chromium) combinations where medium precision shaders are not upgraded to high precision by the browser.",
+    "version": "1.0.0",
+    "compatibility": {
+        "minimum": "14",
+        "verified": "14.361",
+        "maximum": "14"
+    },
+    "authors": [
+        {
+            "name": "In3luki"
+        }
+    ],
+    "esmodules": ["main.mjs", "vendor.mjs"],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "./lang/en.json"
+        }
+    ],
+    "url": "https://github.com/in3luki/fvtt-fragment-shader-precision",
+    "bugs": "https://github.com/in3luki/fvtt-fragment-shader-precision/issues",
+    "changelog": "https://github.com/in3luki/fvtt-fragment-shader-precision/blob/release/CHANGELOG.md",
+    "manifest": "https://github.com/in3luki/fvtt-fragment-shader-precision/releases/latest/download/module.json",
+    "download": "https://github.com/in3luki/fvtt-fragment-shader-precision/releases/latest/download/fvtt-fragment-shader-precision.zip"
+}

@@ -1,0 +1,57 @@
+name: FVTT Shader Precision CD
+
+on:
+  workflow_dispatch:
+    branches: [master]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [24.x]
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: 'true'
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Update Manifest
+        run: |
+          MODULE_VERSION=$(grep -oP '(?<="version": ")[^"]+' dist/module.json | tr -d '\n')
+          echo "moduleVersion=$MODULE_VERSION" >> $GITHUB_ENV
+
+      - name: Zip Files
+        working-directory: ./dist
+        run: zip -r ./fvtt-shader-precision.zip ./*
+
+      - name: Create Version Release
+        id: create_version_release
+        uses: ncipollo/release-action@v1
+        with:
+          name: ${{ env.moduleVersion }}
+          allowUpdates: false
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "./dist/module.json,./dist/fvtt-shader-precision.zip"
+          tag: ${{ env.moduleVersion }}
+
+#      - name: Publish Module to FoundryVTT Website
+#        id: publish-to-foundry-website
+#        uses: cs96and/FoundryVTT-release-package@v1
+#        with:
+#          package-token: ${{ secrets.FOUNDRY_PACKAGE_RELEASE_TOKEN }}
+#          manifest-url: https://github.com/${{ github.repository }}/releases/download/${{ env.moduleVersion }}/module.json
+#          notes-url: https://github.com/${{ github.repository }}/releases/tag/${{ env.moduleVersion }}

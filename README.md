@@ -1,0 +1,15 @@
+A lightweight module that fixes some rendering issues on certain system/browser (e.g. CachyOS/Chromium) combinations where medium precision shaders are not upgraded to high precision by the browser.
+
+## Licenses
+
+**Project Licensing:**
+
+-   All HTML, CSS and Javascript in this project is licensed under the Apache License v2.
+
+**Content Usage and Licensing:**
+
+-   Uses code from the Pathfinder Second Edition system for FoundryVTT (https://github.com/foundryvtt/pf2e) licensed under the Apache License v2.
+
+**Virtual Table Top Platform Licenses:**
+
+-   This Module for Foundry Virtual Tabletop is licensed under the [Limited License Agreement for module development 03/02/2023](https://foundryvtt.com/article/license/).
