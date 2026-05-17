@@ -1,7 +1,7 @@
 {
     "id": "fvtt-fragment-shader-precision",
     "title": "PF2e Fragment Shader Precision",
-    "description": "A lightweight module that fixes some rendering issues on certain system/browser (e.g. CachyOS/Chromium) combinations where medium precision shaders are not upgraded to high precision by the browser.",
+    "description": "A lightweight module that fixes some rendering issues on certain system/browser combinations (CachyOS/Chromium) where medium precision shaders are not upgraded to high precision by the browser.",
     "version": "1.0.0",
     "compatibility": {
         "minimum": "14",
