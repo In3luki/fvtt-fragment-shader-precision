@@ -1,4 +1,4 @@
-A lightweight module that fixes some rendering issues on certain system/browser (e.g. CachyOS/Chromium) combinations where medium precision shaders are not upgraded to high precision by the browser.
+A lightweight module that fixes some rendering issues on certain system/browser combinations (CachyOS/Chromium) where medium precision shaders are not upgraded to high precision by the browser.
 
 ## Licenses
 
