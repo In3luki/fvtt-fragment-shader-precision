@@ -35,7 +35,7 @@ jobs:
 
       - name: Zip Files
         working-directory: ./dist
-        run: zip -r ./fvtt-shader-precision.zip ./*
+        run: zip -r ./fvtt-fragment-shader-precision.zip ./*
 
       - name: Create Version Release
         id: create_version_release
@@ -46,6 +46,6 @@ jobs:
           draft: false
           prerelease: false
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "./dist/module.json,./dist/fvtt-shader-precision.zip"
+          artifacts: "./dist/module.json,./dist/fvtt-fragment-shader-precision.zip"
           tag: ${{ env.moduleVersion }}
 
