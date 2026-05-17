@@ -4,21 +4,16 @@ import PixiJS from "pixi.js";
 declare global {
     namespace globalThis {
         export import PIXI = PixiJS;
-
-        var libWrapper: {
-            register: (packageId: string, target: string, fn: Function, type: string, options?: object) => number;
-            unregister_all: (packageId: string) => void;
-        };
-
+        /* eslint-disable no-var */
         var Hooks: {
-            once: (event: string, fn: Function) => void;
+            once: (event: string, fn: () => void) => void;
         };
 
         var foundry: {
             canvas: {
                 rendering: {
                     shaders: {
-                        AbstractWeatherShader: typeof AbstractWeatherShader;
+                        AbstractWeatherShader: typeof _AbstractWeatherShader;
                     };
                 };
             };
@@ -33,10 +28,11 @@ declare global {
                 register: (namespace: string, key: string, data: object) => void;
             };
         };
+        /* eslint-enable no-var */
     }
 }
 
-declare class AbstractWeatherShader {
+declare class _AbstractWeatherShader {
     static FRAGMENT_HEADER: string;
 }
 
